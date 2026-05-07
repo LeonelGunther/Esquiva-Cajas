@@ -16,12 +16,28 @@ public class CajaMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(0,-speed * Time.deltaTime,0);
+        speed += 0.5f * Time.deltaTime;
 
     }
     public void MmoveBoxToRamdomPosition()
     {
-        Vector3 newPosition =  transform.position;
+        Vector3 newPosition = transform.position;
+        int ramdomX = 0;
+        ramdomX = Random.Range(0, 3);
+        if(ramdomX == 0)
+        {
+            newPosition.x = -2;
+        }
+        else if(ramdomX == 1)
+        {
+            newPosition.x = 0;
+        }
+        else
+        {
+            newPosition.x = 2;
+        }
         newPosition.y = initialYValue;
+
         transform.position = newPosition;
     }
 }
