@@ -16,6 +16,6 @@ public class CajaColisionDetection : MonoBehaviour
         if(col.gameObject.CompareTag("Piso"))
         {
            cajaMovementscript.MmoveBoxToRamdomPosition();
-        }
+         }
     }
 }

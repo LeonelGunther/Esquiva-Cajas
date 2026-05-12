@@ -5,6 +5,7 @@ using UnityEngine;
 public class CajaMovement : MonoBehaviour
 {
         public float speed = 2f;
+        public float speedincrease = 0.5f;
             float initialYValue;
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,7 @@ public class CajaMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(0,-speed * Time.deltaTime,0);
-        speed += 0.5f * Time.deltaTime;
-
+        
     }
     public void MmoveBoxToRamdomPosition()
     {
@@ -37,7 +37,7 @@ public class CajaMovement : MonoBehaviour
             newPosition.x = 2;
         }
         newPosition.y = initialYValue;
-
         transform.position = newPosition;
+        speed += speedincrease;
     }
 }
